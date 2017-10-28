@@ -12,7 +12,7 @@ router.post('/api/friends', function(req, res) {
     for (var i = 0; i < friendsList.length; i++) {
         var totalDifference = 0;
 
-        for (var j = 0; j < 10; j++) {
+        for (var j = 0; j < 5; j++) {
             let scoreDiff = Math.abs(friendsList[i].scores[j] - newSurvey.scores[j]);
             totalDifference += scoreDiff;
         }
@@ -24,7 +24,7 @@ router.post('/api/friends', function(req, res) {
             });
         }
 
-    let maxScore = 40;
+    let maxScore = 20;
     friendConnect.map(function(obj) {
         if (obj.totalDiff < maxScore) maxScore = obj.totalDiff;
     });
